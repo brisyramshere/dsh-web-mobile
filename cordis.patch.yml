@@ -3,4 +3,4 @@
 # the host half is an empty apply so the row exists in the host Loader.
 - insert:
     - id: openslow
-      name: 'openslow'
+      name: '@openslow/openslow'

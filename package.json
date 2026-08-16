@@ -1,5 +1,5 @@
 {
-  "name": "openslow",
+  "name": "@openslow/openslow",
   "version": "0.1.0",
   "description": "Mobile-adaptive DSH web UI: on narrow screens the settings dialog becomes a full-screen sheet and the details panel opens as a full-screen drawer, so every surface stays usable on phones.",
   "type": "module",

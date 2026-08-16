@@ -17,8 +17,8 @@ export const inject: string[] = []
 export function apply(ctx: ClientContext): void {
   ctx.effect(() => {
     const tag = document.createElement('style')
-    tag.dataset.plugin = 'openslow'
-    tag.dataset.pluginCss = 'openslow/mobile.css'
+    tag.dataset.plugin = '@openslow/openslow'
+    tag.dataset.pluginCss = '@openslow/openslow/mobile.css'
     tag.textContent = MOBILE_CSS
     document.head.appendChild(tag)
     return () => {
