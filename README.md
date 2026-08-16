@@ -1,4 +1,4 @@
-# dsh-web-mobile
+# openslow
 
 DeepSeek Harness Web UI 移动端适配:窄屏(≤768px)下设置弹窗变为整屏 sheet、左侧导航栏变为顶部横向条,详情面板变为整屏抽屉(悬浮按钮开合);桌面端(>768px)保持与未安装时一致。纯 client 插件。
 
@@ -16,7 +16,7 @@ DeepSeek Harness Web UI 移动端适配:窄屏(≤768px)下设置弹窗变为整
 ## 安装
 
 ```sh
-dsh plugin --profile web add github:brisyramshere/dsh-web-mobile
+dsh plugin --profile web add github:openslow/dsh-web-mobile
 ```
 
 仓库自带构建产物,一条命令直接安装,无 `allowBuilds` 拦截。装完重启 `dsh web`。
@@ -24,7 +24,7 @@ dsh plugin --profile web add github:brisyramshere/dsh-web-mobile
 npm 安装:
 
 ```sh
-dsh plugin --profile web add @brisyramshere/dsh-web-mobile
+dsh plugin --profile web add openslow
 ```
 
 本地开发:`dsh plugin --profile web add link:/path/to/dsh-web-mobile`

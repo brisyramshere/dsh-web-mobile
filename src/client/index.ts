@@ -17,14 +17,14 @@ export const inject: string[] = []
 export function apply(ctx: ClientContext): void {
   ctx.effect(() => {
     const tag = document.createElement('style')
-    tag.dataset.plugin = '@brisyramshere/dsh-web-mobile'
-    tag.dataset.pluginCss = '@brisyramshere/dsh-web-mobile/mobile.css'
+    tag.dataset.plugin = 'openslow'
+    tag.dataset.pluginCss = 'openslow/mobile.css'
     tag.textContent = MOBILE_CSS
     document.head.appendChild(tag)
     return () => {
       tag.remove()
     }
-  }, 'dsh-web-mobile: styles')
+  }, 'openslow: styles')
 
   setupDetailsDrawer()
 }

@@ -36,7 +36,7 @@ const modules = order
   .join('\n')
 
 const wrapped = [
-  'window.__ModuleLoader__.load({ id: "@brisyramshere/dsh-web-mobile", factory: (require) => {',
+  'window.__ModuleLoader__.load({ id: "openslow", factory: (require) => {',
   'var __modules = {};',
   modules,
   'var __cache = {};',
