@@ -1,53 +1,59 @@
-# openslow
+# dsh-web-mobile
 
-DeepSeek Harness Web UI 移动端适配:窄屏(≤768px)下设置弹窗变为整屏 sheet、左侧导航栏变为顶部横向条,详情面板变为整屏抽屉(悬浮按钮开合);桌面端(>768px)保持与未安装时一致。纯 client 插件。
+A [DeepSeek Harness](https://github.com/deepseek-ai/deepseek-harness) plugin that adapts the Web GUI for mobile. On narrow screens (≤768px) the settings dialog becomes a full-screen sheet and the details panel opens as a full-screen drawer; on desktop (>768px) everything stays exactly as before. Pure client plugin.
 
 [![Release v0.1.0](https://img.shields.io/badge/release-v0.1.0-5B4CF0?style=flat-square)](package.json)
 [![License: MIT](https://img.shields.io/badge/license-MIT-0B7285?style=flat-square)](LICENSE)
 [![DSH](https://img.shields.io/badge/DSH-Web%20Profile-5B4CF0?style=flat-square)](cordis.patch.yml)
 
-## 特性
+## Features
 
-- **设置界面整屏**:官方 800px 双栏弹窗在手机上改为整屏 sheet——无圆角、无留边,`100dvh` 自适应地址栏收起/展开,`env(safe-area-inset-*)` 避开刘海;左侧 188px 导航栏变为顶部横向滚动条,内容区占满剩余空间;
-- **详情面板抽屉**:官方布局在窄屏会把右侧详情列强制压成 0px(内置 `openDetails()` 无法显示),本插件用悬浮按钮(⋯)把它切换为整屏抽屉,右上角 ✕ 关闭;
-- **防 iOS 输入框自动放大**:`input/textarea/select` 字号 ≥16px,聚焦时不触发自动缩放;
-- **桌面端无感**:所有改动都在 `@media (max-width: 768px)` 内,桌面端与未安装时一致。
+- **Full-screen settings** — the official 800px two-column dialog becomes a full-screen sheet (no radius, no margins), `100dvh` adapts to the address bar, `env(safe-area-inset-*)` clears the notch; the left nav rail becomes a horizontal top bar.
+- **Details drawer** — the layout forces the details column to 0px on narrow screens (the built-in `openDetails()` never shows it); this plugin toggles it as a full-screen drawer via a floating button (⋯) with a ✕ close.
+- **No iOS input zoom** — `input/textarea/select` font-size ≥ 16px.
+- **Desktop unchanged** — every rule is scoped to `@media (max-width: 768px)`.
 
-## 安装
+## Install
+
+GitHub:
 
 ```sh
 dsh plugin --profile web add github:openslow/dsh-web-mobile
 ```
 
-仓库自带构建产物,一条命令直接安装,无 `allowBuilds` 拦截。装完重启 `dsh web`。
-
-npm 安装:
+npm:
 
 ```sh
 dsh plugin --profile web add @openslow/openslow
 ```
 
-本地开发:`dsh plugin --profile web add link:/path/to/dsh-web-mobile`
+Local dev: `dsh plugin --profile web add link:/path/to/dsh-web-mobile`
 
-## 构建
+The repo ships built artifacts (`lib/`), so the GitHub install needs no build step. Restart `dsh web` after installing.
+
+## Build
 
 ```sh
 pnpm install
 pnpm build
 ```
 
-产物 `lib/` 与源码同步入库,改动源码后重新构建再提交。
+`lib/` is committed alongside source; rebuild and commit after changing source.
 
-## 验证
+## Verify
 
-- `pnpm verify` 类型检查;`dsh --profile web --dump-config` 应出现插件层;
-- 移动端(≤768px):设置弹窗整屏、导航条横排、详情抽屉开合/关闭;
-- 桌面端(>768px):与未安装时一致。
+- `pnpm verify` type-checks; `dsh --profile web --dump-config` should show the plugin layer.
+- Mobile (≤768px): settings full-screen, nav bar horizontal, details drawer opens/closes.
+- Desktop (>768px): identical to uninstalled.
 
-## 兼容性
+## Compatibility
 
-需要 `:has()`(Chromium 105+);`prefers-reduced-motion: reduce` 下自动禁用动画。
+Requires `:has()` (Chromium 105+); animations are disabled under `prefers-reduced-motion: reduce`.
 
 ## License
 
 [MIT](LICENSE)
+
+---
+
+中文说明见 [README.zh-CN.md](README.zh-CN.md)。
