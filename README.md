@@ -24,7 +24,7 @@ dsh plugin --profile web add github:openslow/dsh-web-mobile
 npm:
 
 ```sh
-dsh plugin --profile web add @openslow/openslow
+dsh plugin --profile web add @openslow/dsh-web-mobile
 ```
 
 Local dev: `dsh plugin --profile web add link:/path/to/dsh-web-mobile`

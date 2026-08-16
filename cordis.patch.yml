@@ -2,5 +2,5 @@
 # The browser half is discovered through the package.json dsh.client declaration;
 # the host half is an empty apply so the row exists in the host Loader.
 - insert:
-    - id: openslow
-      name: '@openslow/openslow'
+    - id: dsh-web-mobile
+      name: '@openslow/dsh-web-mobile'
